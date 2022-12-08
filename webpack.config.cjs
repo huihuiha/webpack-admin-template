@@ -3,13 +3,25 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/index.js'),
+  entry: path.resolve(__dirname, './src/index.ts'),
   mode: 'development',
   output: {
     filename: 'js/[name].[contenthash].js',
     path: path.join(__dirname, './dist'),
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   devtool: false,
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+    ],
+  },
   optimization: {
     usedExports: true,
   },
