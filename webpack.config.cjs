@@ -1,16 +1,20 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/index.ts'),
+  entry: path.resolve(__dirname, './src/main.ts'),
   mode: 'development',
   output: {
     filename: 'js/[name].[contenthash].js',
     path: path.join(__dirname, './dist'),
   },
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    alias: {
+      '@': path.resolve('src'),
+    },
+    extensions: ['.tsx', '.ts', '.js', '.vue', 'jsx'],
   },
   devtool: false,
   module: {
@@ -18,6 +22,11 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.vue?$/,
+        use: 'vue-loader',
         exclude: /node_modules/,
       },
     ],
@@ -36,5 +45,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'index.html'),
     }),
+    new VueLoaderPlugin(),
   ],
 };
