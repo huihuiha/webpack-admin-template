@@ -1,4 +1,5 @@
 <template>
+  <router-view></router-view>
   <div class="red" @click="add">{{ count }}</div>
 </template>
 
