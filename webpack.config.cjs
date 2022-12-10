@@ -48,6 +48,7 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
+          // 取代style-loader的原因是将css抽离成单独文件
           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',

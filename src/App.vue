@@ -12,6 +12,9 @@ const add = () => {
 </script>
 <style scoped>
 .red {
+  display: flex;
+  justify-content: center;
+  align-content: center;
   color: red;
 }
 </style>
