@@ -3,6 +3,9 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
+// 拼接__dirname
+const joinDirname = (dir) => path.join(__dirname, `src/${dir}`);
+
 module.exports = {
   entry: path.resolve(__dirname, './src/main.ts'),
   mode: 'development',
@@ -13,6 +16,10 @@ module.exports = {
   resolve: {
     alias: {
       '@': path.resolve('src'),
+      '@compoonent': joinDirname('component'),
+      '@pages': joinDirname('pages'),
+      '@router': joinDirname('router'),
+      '@stores': joinDirname('stores'),
     },
     extensions: ['.tsx', '.ts', '.js', '.vue', 'jsx'],
   },
@@ -49,7 +56,7 @@ module.exports = {
   },
   devServer: {
     port: 8080,
-    historyApiFallback: true, // 支持history模式
+    historyApiFallback: true, // 支持浏览器回车history模式
     static: {
       directory: path.join(__dirname, 'public'),
     },
