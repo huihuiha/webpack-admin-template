@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "module": "src/index.ts",
   "scripts": {
     "build": "webpack",
     "start": "webpack serve"
@@ -22,6 +23,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "pinia": "^2.0.28",
     "vue": "^3.2.45",
     "vue-loader": "^17.0.1",
     "vue-router": "^4.1.6"
