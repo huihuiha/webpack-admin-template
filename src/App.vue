@@ -6,6 +6,7 @@
   >
     TailWindCSS Ready!!
   </button>
+  <img src="@assets/imgs/icon.png">
 </template>
 
 <script setup lang="ts">

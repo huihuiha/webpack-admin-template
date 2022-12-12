@@ -21,6 +21,7 @@ module.exports = {
       '@pages': joinDirname('pages'),
       '@router': joinDirname('router'),
       '@stores': joinDirname('stores'),
+      '@assets': joinDirname('assets')
     },
     extensions: ['.tsx', '.ts', '.js', '.vue', 'jsx'],
   },
@@ -54,6 +55,11 @@ module.exports = {
           'postcss-loader',
         ],
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(png|jpe?g|gif|webp)(\?.*)?$/,
+        type: 'asset',
+        generator: { filename: 'img/[contenthash:8][ext][query]' },
       },
     ],
   },
