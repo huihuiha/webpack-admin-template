@@ -32,8 +32,11 @@
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.3",
+    "@vueuse/core": "^9.6.0",
+    "@vueuse/head": "^1.0.22",
     "pinia": "^2.0.28",
     "vue": "^3.2.45",
+    "vue-i18n": "^9.2.2",
     "vue-loader": "^17.0.1",
     "vue-router": "^4.1.6"
   }
