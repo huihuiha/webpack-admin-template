@@ -65,6 +65,6 @@ const router = useRouter()
 </template>
 <style scoped>
 .bg-img {
-  background-image: url(../assets/login/bg.png);
+  background-image: url(../assets/imgs/login/bg.png);
 }
 </style>
