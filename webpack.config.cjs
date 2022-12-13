@@ -11,7 +11,7 @@ module.exports = {
   entry: path.resolve(__dirname, './src/main.ts'),
   mode: 'development',
   output: {
-    filename: 'js/[name].[contenthash].js',
+    filename: 'js/[name].[contenthash:8].js',
     path: path.join(__dirname, './dist'),
   },
   resolve: {
@@ -80,7 +80,7 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash].css',
+      filename: 'css/[name].[contenthash:8].css',
     }),
   ],
 };
