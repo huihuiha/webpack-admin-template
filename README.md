@@ -13,7 +13,7 @@ src
 + stores  # 状态管理库
 ```
 
-## 配置完成清单
+## 完成清单
 - Vue SFC组件
 - CSS Loader
 - Typescript
