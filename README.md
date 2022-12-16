@@ -1,5 +1,5 @@
 # webpack-admin-template
-基于 Vue3 + webpack + typescript 打造后台管理系统
+通过搭建 Vue3 + webpack + typescript 的后台管理系统去实践 Webpack5 的新特性，例如 Vue开发环境搭建、devServer开发体验、持久化缓存、tree-shaking、代码抽离、热更新、构建速度、页面性能的优化
 
 ## 目录
 ```bash
