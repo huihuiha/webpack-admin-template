@@ -3,13 +3,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 // 拼接__dirname
-const joinDirname = (dir) => path.join(__dirname, `src/${dir}`);
+const joinDirname = (dir) => path.join(__dirname, `../src/${dir}`);
 
 module.exports = {
-  entry: path.resolve(__dirname, './src/main.ts'),
+  entry: path.resolve(__dirname, '../../src/main.ts'),
   mode: 'development',
   output: {
     filename: 'js/[name].[contenthash:8].js',
@@ -22,7 +22,7 @@ module.exports = {
       '@pages': joinDirname('pages'),
       '@router': joinDirname('router'),
       '@stores': joinDirname('stores'),
-      '@assets': joinDirname('assets')
+      '@assets': joinDirname('assets'),
     },
     extensions: ['.tsx', '.ts', '.js', '.vue', 'jsx'],
   },
@@ -71,19 +71,19 @@ module.exports = {
     port: 8080,
     historyApiFallback: true, // 支持浏览器回车history模式
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: path.join(__dirname, '../../public'),
     },
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'index.html'),
+      template: path.resolve(__dirname, '../../index.html'),
     }),
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash:8].css',
     }),
     // css压缩
-    new CssMinimizerPlugin()
+    new CssMinimizerPlugin(),
   ],
 };
